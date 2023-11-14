@@ -9,19 +9,26 @@
     $submit = $_POST['submit'];
 
     if (isset($_POST['submit'])) {
-        if ($password == $cofirm_password) {
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            $insert = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
-            $query = mysqli_query($conn, $insert);
-
-            if ($query) {
-                echo "<script>alert('Registration successful!'); window.location.href = 'login.php';</script>";
-            } else {
-                echo "<script>alert('Registration failed!');</script>";
-            }
-
+        $check = "SELECT * FROM user WHERE username = '$username'";
+        $result = mysqli_query($conn, $check);
+        
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script>alert('Username already exists!');</script>";
         } else {
-            echo "<script>alert('Password does not match!');</script>";
+            if ($password == $cofirm_password) {
+                $password = password_hash($password, PASSWORD_DEFAULT);
+                $insert = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+                $query = mysqli_query($conn, $insert);
+
+                if ($query) {
+                    echo "<script>alert('Registration successful!'); window.location.href = 'login.php';</script>";
+                } else {
+                    echo "<script>alert('Registration failed!');</script>";
+                }
+
+            } else {
+                echo "<script>alert('Password does not match!');</script>";
+            }
         }
     }
 ?>
