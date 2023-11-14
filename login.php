@@ -14,6 +14,7 @@
             $row = mysqli_fetch_array($query);
             if (password_verify($password, $row['password'])) {
                 $_SESSION['email'] = $email;
+                $_SESSION['username'] = $row['username'];
                 header('Location: index.php');
                 exit;
             } else {
