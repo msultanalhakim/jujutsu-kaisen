@@ -6,6 +6,8 @@
     $password = $_POST['password'];
     $submit = $_POST['submit'];
 
+    $passwordError = false;
+
     if (isset($_POST['submit'])) {
         $select = "SELECT * FROM user WHERE email='$email'";
         $query = mysqli_query($conn, $select);
@@ -18,7 +20,7 @@
                 header('Location: index.php');
                 exit;
             } else {
-                echo "<script>alert('Password is incorrect!');</script>";
+                $passwordError = true;
             }
         }
     }
@@ -34,6 +36,9 @@
 <body>
     <div class="login-box">
         <h2>Login</h2>
+        <?php if ($passwordError) : ?>
+            <p style="color: red; font-style: italic;">Password is incorrect</p>
+        <?php endif; ?>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="input-box">
                 <input type="email" name="email" placeholder="Email" required>
