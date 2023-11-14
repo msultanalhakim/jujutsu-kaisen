@@ -7,25 +7,20 @@
     $submit = $_POST['submit'];
 
     if (isset($_POST['submit'])) {
-        $select = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+        $select = "SELECT * FROM user WHERE email='$email'";
         $query = mysqli_query($conn, $select);
-        $row = mysqli_fetch_array($query);
 
-        if ($row['email'] == $email) {
-
-            if ($row['password'] == $password) {
+        if (mysqli_num_rows($query) > 0) {
+            $row = mysqli_fetch_array($query);
+            if (password_verify($password, $row['password'])) {
                 $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
                 header('Location: index.php');
+                exit;
             } else {
                 echo "<script>alert('Password is incorrect!');</script>";
             }
-
-        } else {
-            echo "<script>alert('Email is incorrect!');</script>";
         }
     }
-
 ?>
 
 <!DOCTYPE html>
