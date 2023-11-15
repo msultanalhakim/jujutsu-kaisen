@@ -2,6 +2,11 @@
     include "koneksi.php";
     session_start();
 
+    if (isset($_SESSION['username']) || isset($_SESSION['email'])) {
+        header('Location: index.php');
+        exit;
+    }
+
     $email = $_POST['email'];
     $password = $_POST['password'];
     $submit = $_POST['submit'];
