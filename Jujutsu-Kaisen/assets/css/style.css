@@ -1,0 +1,1001 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+em{
+    background-color: #910029;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-style: normal;
+}
+
+.hero{
+    width:100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12,3,51,0.3), rgba(12,3,51,0.3));
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    width: 200px;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 26px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover{
+    color:#b9b9b9;
+}
+
+nav ul li ul li{
+    margin-left: 0;
+    padding: 0;
+}
+
+.nav-account{
+    padding: 6px 20px;
+    border-radius: 5px;
+    background-color: #C70039;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.nav-account:hover{
+    background-color: #910029;
+}
+
+.dropdown .dropbtn{
+    cursor: pointer;
+    text-align: left;
+    font-size: 17px;  
+    border: none;
+    width: 78px;
+    background: url("../icon/caret-down-solid.svg") no-repeat;
+    background-size: 15px;
+    background-position: right 4px top 55%;
+    color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.dropbtn:hover{
+    filter: invert(17%) sepia(0%) saturate(220%) hue-rotate(183deg) brightness(140%) contrast(40%);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    max-width: 90px;
+    margin-left: -10px;
+    margin-top: 10px;
+    background-color: #C70039;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    width: 90px;
+    border-radius: 4px;
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 15px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.dropdown-content a:hover{
+    color: #b9b9b9;
+    background-color: #910029;
+}
+
+.show {
+    display: block;
+}
+
+.content{
+    text-align: center;
+}
+
+.content h1{
+    font-size:140px;
+    font-family: 'Jujutsu Kaisen';
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.2s ease-in-out;
+    cursor:default;
+}
+
+.content h1:hover{
+    color:#C70039;
+}
+
+.content p{
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    cursor:default;
+}
+
+.typed-out{
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(120, end) forwards;
+    width: 0;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+
+.content a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: #C70039;
+    color: #fff;
+    font-size: 18px;
+    padding: 6px 26px;
+    border-radius: 50px;
+    margin-top: 16px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.content a:hover{
+    color:#b9b9b9;
+    background-color: #910029;
+}
+
+.gradient-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(0, 0, 0) 20%, rgba(13, 13, 13, 0.7), transparent);
+    z-index: -1;
+}
+
+.background-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    -webkit-filter: grayscale(10%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(10%);
+}
+
+@media (min-aspect-ratio: 16/9){
+    .background-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .background-video{
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* Display Anime Content */
+.anime-display{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right,rgba(3, 1, 15, 0.7), transparent), repeating-linear-gradient(rgb(3, 1, 15, 1), transparent, rgb(3, 1, 10)), url('../images/background-jujutsu.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.display-content{
+    width: 100%;
+    max-width: 70vh;
+    height: 80%;
+    margin-top: 12vh;
+    margin-left: 12vh;
+    padding: 50px 0px;
+    display: inline-block;
+}
+
+.img-display{
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.display-title{
+    padding: 50px 0px;
+}
+
+.display-title h4{
+    font-size: 22px;
+    font-weight: 600;
+    color:#fff;
+}
+
+.display-subtitle ul li{
+    list-style: none;
+    display: inline-block;
+    padding-right: 4px;
+    margin-top: 10px;
+    color: #767676;
+    font-size: 15px;
+}
+
+.display-maturity{
+    border: 1px solid #767676;
+    padding: 0px 4px;
+}
+
+.display-paragraph{
+    padding: 20px 0px;
+    font-size: 15px;
+    color: white;
+}
+
+.display-footer{
+    color:white;
+    font-size:15px;
+}
+
+.display-mark{
+    color: #767676;
+}
+
+.display-watch{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Anime Character Content */
+.anime-character{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom,rgb(3, 1, 12, 1), rgba(3, 1, 12, 0.7),rgba(13, 13, 13, 0.2),transparent, rgba(13, 13, 13, 0.2),rgba(13, 13, 13, 1)), url('../images/backgrounds/yuji-itadori.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.character-content{
+    display: flex;
+    align-items: center;
+    float: right;
+    max-width: 80vh;
+    margin-right: 10vh;
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+}
+
+.character-title{
+    margin-top: 44vh;
+}
+
+.character-title h1{
+    font-size: 54px;
+    font-weight: 600;
+    font-style: italic;
+    width: 100%;
+    color:#fff;
+    cursor: default;
+    text-align: right;
+}
+
+.character-title p{
+    width: 100%;
+    text-align: right;
+    color: #fff;
+    cursor: default;
+}
+
+.character-mark{
+    width: 100%;
+    text-align: right;
+    float: right;
+    color:#767676;
+    margin: -10px -4px;
+    font-size: 14px;
+    cursor: default;
+}
+
+.character-box ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 4px;
+    
+}
+
+.character-box ul li a{
+    cursor: pointer;
+}
+
+.character-box{
+    float: right;
+}
+
+.img-character{
+    width: 50px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.img-character:hover{
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+
+/* Merchandise Jujutsu */
+.merchandise-jujutsu{
+    width: 100%;
+    height: 180vh;
+    background-color: rgba(13, 13, 13);
+}
+
+.merchandise-jujutsu h1{
+    text-align: center;
+    font-size: 30px;
+    padding: 80px 0px 65px 0px;
+    color:white;
+    font-weight: 800;
+    cursor: default;
+}
+
+.merchandise-items{
+    margin: auto;
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+}
+
+.merchandise-items .items ul li{
+    padding: 30px;
+    list-style: none;
+    display: inline-block;
+    width: 22%;
+    transition: 0.2s;
+}
+
+.merchandise-items .items ul li:hover{
+    -webkit-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.merchandise-items .items ul li h6{
+    color:white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.merchandise-items .items ul li p{
+    color:white;
+    font-size: 14px;
+}
+
+.merchandise-items .more-button{
+    text-decoration: none;
+    background: #910029;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.4s;
+}
+
+.merchandise-items .more-button:hover{
+    background: #fff;
+    color: #910029;
+}
+
+.merchandise-img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Floating Bar Section */
+.floating-bar{
+    width: 100%;
+    height: 7vh;
+    background-color: rgba(13, 13, 13);
+}
+
+.floating-content{
+    width: 75%;
+    height: 100%;
+    margin:auto;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(48,48,48,1) 13%, rgba(13,13,13,1) 100%);
+}
+
+.floating-items{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    padding: 14px;
+    cursor: default;
+}
+
+.floating-items p{
+    margin: 0px 6px;
+    color: white;
+}
+
+.floating-items ul li{
+    display: inline-block;
+    list-style: none;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.floating-image{
+    height: 5vh;
+    margin-top: 6px;
+}
+
+.button-floating{
+    cursor: pointer;
+    text-decoration: none;
+    background: #C70039;
+    padding: 4px 16px;
+    border-radius: 4px;
+    color: white;
+    float: right;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.button-floating:hover{
+    background: #910029;
+    color:#b9b9b9;
+}
+
+/* Article Section */
+.article-section{
+    width: 100%;
+    height: 160vh;
+    background-color: rgba(13, 13, 13, 1);
+}
+
+.article-content{
+    width: 85%;
+    height: 100%;
+    padding: 40px 30px;
+    margin:auto;
+}
+
+.article-items{
+    width: 100%;
+}
+
+.article-items h2{
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+    padding: 14px;
+}
+
+.article-items span{
+    border-left: 2px solid #fff;
+    padding: 4px 14px;
+    font-size: 18px;
+    color: #767676;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.article-list{
+    width: 100%;
+    height: 100%;
+    padding: 0px 16px;
+}
+
+.article-list ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 30px 14px;
+    vertical-align: top;
+}
+
+.article-list h3{
+    font-size: 24px;
+    font-weight: 600;
+    width: 620px;
+    color: white;
+}
+
+.article-list span{
+    border: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+.article-list p{
+    color: white;
+    width: 620px;
+    font-size: 15px;
+    text-align: justify;
+    padding: 12px 0px;
+    text-indent: 40px;
+}
+
+.article-list a{
+    text-decoration: none;
+    color: #767676;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.article-list a:hover{
+    text-decoration: none;
+    color: #555555;
+}
+
+.article-image{
+    width: 460px;
+    height: 300px;
+    border-radius: 2px;
+}
+
+/* Register and Login Section */
+.login-container{
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    padding: 60px;
+    background:url('../images/backgrounds/jujutsu-login.png')no-repeat;
+    background-size: cover;
+}
+
+.login-container h1{
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    margin-top: 20vh;
+    margin-bottom: -14px;
+    cursor: default;
+}
+
+.login-container a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.login-container a:hover{
+    color: #da1e2c;
+}
+
+.register-container{
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    padding: 60px;
+    background:url('../images/backgrounds/jujutsu-register.png')no-repeat;
+    background-size: cover;
+}
+
+.register-container h1{
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    margin-top: 8vh;
+    margin-bottom: -14px;
+    cursor: default;
+}
+
+.register-container a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.register-container a:hover{
+    color: #709dfa;
+}
+
+.account-content{
+    padding: 20px;
+    width: 35%;
+    margin: auto;
+}
+
+.account-form{
+    padding: 0px 16px;
+    box-sizing: border-box;
+    opacity: 100% !important;
+}
+
+.account-form label{
+    color: #fff;
+    display: block;
+    font-weight: 400;
+    padding: 8px 4px;
+    margin-top: 14px;
+}
+
+.account-form span{
+    color: white;
+    font-size: 14px;
+    cursor: default;
+}
+
+.account-form input[type="text"], input[type="password"], input[type="email"]{
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+    background-color: #f1f1f1;
+    width: 100%;
+    padding: 10px;
+    border-radius: 14px;
+    display: block;
+    box-sizing: border-box;
+}
+
+.login-button{
+    display: flex;
+    margin: 30px auto 0px auto;
+    border: none;
+    border-radius: 23px;
+    padding: 10px 70px;
+    background-color: #da1e2c;
+    color: white;
+    font-weight: 600;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    cursor:pointer;
+}
+
+.login-button:hover{
+    background-color: #610f13;
+    color: #e5e5e5;
+}
+
+.register-button{
+    display: flex;
+    margin: 30px auto 0px auto;
+    border: none;
+    border-radius: 23px;
+    padding: 10px 70px;
+    background-color: #709dfa;
+    color: white;
+    font-weight: 600;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    cursor:pointer;
+}
+
+.register-button:hover{
+    background-color: #0f1350;
+    color: #e5e5e5;
+}
+
+.login-notification{
+    margin: 20px auto -10px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    height: 6vh;
+    background: #da1e2c;
+}
+
+.login-notification span{
+    margin-left: 10px;
+}
+
+.login-notification a{
+    margin-right: 10px;
+}
+
+.register-notification{
+    margin: 20px auto -10px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    height: 6vh;
+    background: #709dfa;
+}
+
+.register-notification span{
+    margin-left: 10px;
+}
+
+.register-notification a{
+    margin-right: 10px;
+}
+
+.close-notification{
+    float: right;
+    box-sizing: border-box;
+    vertical-align: middle;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-notification:hover{
+    color:#f1f1f1;
+}
+
+.arrow-register{
+    width: 24px;
+    margin-left: -26px;
+    margin-right: 6px;
+    vertical-align: middle;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.arrow-register:hover{
+    -webkit-filter: invert(58%) sepia(18%) saturate(1747%) hue-rotate(188deg) brightness(103%) contrast(96%);
+    filter: invert(58%) sepia(18%) saturate(1747%) hue-rotate(188deg) brightness(103%) contrast(96%);
+}
+
+.arrow-login{
+    width: 24px;
+    margin-left: -24px;
+    margin-right: 6px;
+    vertical-align: middle;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.arrow-login:hover{
+    -webkit-filter: invert(23%) sepia(57%) saturate(6259%) hue-rotate(345deg) brightness(87%) contrast(97%);;
+    filter: invert(23%) sepia(57%) saturate(6259%) hue-rotate(345deg) brightness(87%) contrast(97%);;
+}
+
+/* Account Section */
+.account-container{
+    display: flex;
+    vertical-align: middle;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    padding: 60px;
+    background: rgba(13, 13, 13);
+}
+
+.account-section{
+    width: 80%;
+    height: 70vh;
+    background:url('../images/backgrounds/3.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    border-radius: 7px;
+    display: inline-block;
+}
+
+.account-left{
+    height: 100%;
+    width: 24%;
+    background-color: #C70039;
+    border-radius: 7px;
+    display: inline-block;
+}
+
+.account-left h4{
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left;
+    padding: 22px 20px 10px;
+    color: white;
+}
+
+.account-left span{
+    padding: 24px;
+    margin: 20px;
+    vertical-align: bottom;
+}
+
+.account-left ul li{
+    list-style: none;
+    text-align: left;
+    background-color: #C70039;
+    width: 100%;
+    padding: 14px 20px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.account-left ul li:hover{
+    background-color: #a0002d;
+}
+
+.account-left ul li a{
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.account-left ul li a:hover{
+    color: #dddddd;
+}
+
+.account-left .active{
+    background-color: #a0002d;
+    font-weight: 600;
+}
+
+.account-left .logo{
+    width: 100%;
+    padding: 22px 30px 14px;
+}
+
+.account-right{
+    width: 74%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 32px 20px;
+}
+
+.account-right h4{
+    font-weight: 800;
+    font-size: 32px;
+    text-align: left;
+    color: #C70039;
+    display: inline-block;
+}
+
+.account-right .btn-logout{
+    float: right;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background-color: #C70039;
+    vertical-align: bottom;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.account-right .btn-logout:hover{
+    background-color: #910029;
+}
+
+.account-right .img-logout{
+    width: 20px;
+    vertical-align: middle;
+}
+
+.account-right .account-content{
+    padding: 20px;
+    width: 100%;
+    float: left;
+    display: block;
+} 
+
+.account-right .account-content label{
+    padding: 6px;
+    display: block;
+}
+.account-right .account-content span{
+    margin: 12px 20px;
+    font-weight: bold;
+    font-size: 19px;
+} 
+
+.account-right .account-content input[type="text"], .account-right .account-content input[type="password"], .account-right .account-content input[type="file"]{
+    font-size: 16px;
+    padding: 4px 16px;
+    border:none;
+    border-radius: 14px;
+    border-right: 2px solid #b9b9b9;
+    border-bottom: 2px solid #b9b9b9;
+    width: 50%;
+    margin: 6px;
+    display: block;
+} 
+
+.account-right .account-content input[type="file"]{
+    font-size: 16px;
+    padding: 4px 16px;
+    border:none;
+    border-radius: 14px;
+    border-right: 2px solid #b9b9b9;
+    border-bottom: 2px solid #b9b9b9;
+    background-color: #fff;
+    width: 50%;
+    margin: 6px;
+    display: block;
+} 
+
+.account-right .account-content textarea{
+    max-height: 95px;
+    max-width: 100%;
+    width: 100%;
+    font-size: 16px;
+    padding: 4px 16px;
+    margin: 6px;
+    border:none;
+    border-radius: 14px;
+    border-right: 2px solid #b9b9b9;
+    border-bottom: 2px solid #b9b9b9;
+} 
+
+.account-right .account-content input[type="submit"]{
+    padding: 4px 24px;
+    margin: 20px 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #C70039;
+    color: white;
+    font-weight: 600;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.account-right .account-content input[type="submit"]:hover{
+    background-color: #910029;
+}
+
+.arrow-account{
+    width: 20px;
+    margin-left: -26px;
+    margin-right: 8px;
+    vertical-align: middle;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.arrow-account:hover{
+    filter: invert(17%) sepia(0%) saturate(220%) hue-rotate(183deg) brightness(140%) contrast(40%);
+}
+
+
+/* Footer Section */
+.footer {
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(13, 13, 13);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

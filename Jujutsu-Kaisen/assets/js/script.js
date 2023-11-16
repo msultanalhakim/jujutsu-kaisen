@@ -1,0 +1,75 @@
+function itadoriYuji() {
+    document.getElementById("anime-character").style.backgroundImage = "linear-gradient(to bottom,rgb(3, 1, 12, 1), rgba(3, 1, 12, 0.7),rgba(13, 13, 13, 0.2),transparent, rgba(13, 13, 13, 0.2),rgba(13, 13, 13, 1)), url('assets/images/backgrounds/yuji-itadori.png')";
+    document.getElementById("character-h1").innerHTML = "Yuji Itadori";
+    document.getElementById("character-p").innerHTML = "Yuji is protagonist of the Jujutsu Kaisen series, who was living a normal life until he encountered Megumi and ate one of Sukuna's fingers";
+}
+
+function gojoSatoru() {
+    document.getElementById("anime-character").style.backgroundImage = "linear-gradient(to bottom,rgb(3, 1, 12, 1), rgba(3, 1, 12, 0.7),rgba(13, 13, 13, 0.2),transparent, rgba(13, 13, 13, 0.2),rgba(13, 13, 13, 1)), url('assets/images/backgrounds/gojo-satoru.png')";
+    document.getElementById("character-h1").innerHTML = "Gojo Satoru";
+    document.getElementById("character-p").innerHTML = "Gojo is protagonists of the Jujutsu Kaisen series, special grade jujutsu sorcerer and widely recognized as the strongest in the world";
+}
+
+function megumiFushiguro() {
+    document.getElementById("anime-character").style.backgroundImage = "linear-gradient(to bottom,rgb(3, 1, 12, 1), rgba(3, 1, 12, 0.7),rgba(13, 13, 13, 0.2),transparent, rgba(13, 13, 13, 0.2),rgba(13, 13, 13, 1)), url('assets/images/backgrounds/megumi-fushiguro.png')";
+    document.getElementById("character-h1").innerHTML = "Megumi Fushiguro";
+    document.getElementById("character-p").innerHTML = "Megumi is deuteragonist of the Jujutsu Kaisen series, an exceptionally focused person and a highly disciplined combatant";
+}
+
+function nobaraKugisaki() {
+    document.getElementById("anime-character").style.backgroundImage = "linear-gradient(to bottom,rgb(3, 1, 12, 1), rgba(3, 1, 12, 0.7),rgba(13, 13, 13, 0.2),transparent, rgba(13, 13, 13, 0.2),rgba(13, 13, 13, 1)), url('assets/images/backgrounds/suguru-geto.jpeg')";
+    document.getElementById("character-h1").innerHTML = "Suguru Geto";
+    document.getElementById("character-p").innerHTML = "Geto is an antagonist of the Jujutsu Kaisen series, intellect translates well to battle, always able to think a step ahead of his opponent";
+}
+
+function dropdownNav(){
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function notificationRegister(){
+    document.getElementById("register-notification").style.display = "none";
+    window.location.assign("register.php");
+}
+
+function notificationLogin(){
+    document.getElementById("login-notification").style.display = "none";
+    window.location.assign("login.php");
+}
+
+function userProfiles(){
+    document.getElementById("user-profiles").style.display = "inline-block";
+    document.getElementById("change-password").style.display = "none";
+    document.getElementById("users").classList.add("active");
+    document.getElementById("passwords").classList.remove("active");
+
+}
+
+function changePassword(){
+    document.getElementById("user-profiles").style.display = "none";
+    document.getElementById("change-password").style.display = "inline-block";
+    document.getElementById("passwords").classList.add("active");
+    document.getElementById("users").classList.remove("active");
+}
+
+function insertArticle(){
+    document.getElementById("user-profiles").style.display = "none";
+    document.getElementById("change-password").style.display = "none";
+    document.getElementById("insert-article").style.display = "inline-block";
+    document.getElementById("insert-episode").style.display = "none";
+}
+
+function insertEpisode(){
+    document.getElementById("user-profiles").style.display = "none";
+    document.getElementById("change-password").style.display = "none";
+    document.getElementById("insert-article").style.display = "none";
+    document.getElementById("insert-episode").style.display = "inline-block";
+}
+
+window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+        let myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+        }
+    }
+  }
