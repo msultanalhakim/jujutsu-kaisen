@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'article.php';
+    include 'functionArticle.php';
 
     $articles = getTopArticles();
 
@@ -8,7 +8,7 @@
         header('Location: login.php');
     }
 ?>
-dasadadsadasds
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +19,14 @@ dasadadsadasds
 <body>
     <h1>Hello, <?php echo $_SESSION['username']; ?> !</h1>
     <a href="logout.php">Logout</a>
-    <h1>Top 3 Articles</h1>
+    <h1>Top Newest 3 Articles</h1>
     <?php while ($article = mysqli_fetch_array($articles)): ?>
         <h2><?php echo $article['article_name']; ?></h2>
         <p><?php echo $article['article_content']; ?></p>
-        <img src="<?php echo $article['article_image']; ?>" alt="article-img">
+        <img src="<?php echo $article['article_image']; ?>" alt="article-img" width="200px">
+        <hr>
     <?php endwhile; ?>
     <br><br>
-    <a href="tampilkan.php">View All</a>
+    <a href="allArticles.php">View All</a>
 </body>
 </html>
