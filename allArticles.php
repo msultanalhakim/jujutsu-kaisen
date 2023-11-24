@@ -2,7 +2,7 @@
     include "functionArticle.php";
     include "koneksi.php";
 
-    $articles = getAllArticles();
+    list($articles, $jumlahHalaman, $halamanAktif) = getAllArticles();
 
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -31,6 +31,25 @@
     <form action="addArticle.php" method="post">
         <button type="submit" name="submit">Add Article</button>
     </form>
+    <br>
+    <!-- Pagination -->
+    <h5></h5>
+    <?php if ($halamanAktif > 1) : ?>
+        <a href="?halaman=<?= $halamanAktif - 1 ?>">&laquo;</a> <!-- &laquo; left arrow -->
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+        <?php if ($i == $halamanAktif) : ?>
+            <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a>
+        <?php else : ?>
+            <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+        <?php endif; ?>
+    <?php endfor; ?>
+
+    <?php if ($halamanAktif < $jumlahHalaman) : ?>
+        <a href="?halaman=<?= $halamanAktif + 1 ?>">&raquo;</a> <!-- &raquo; right arrow -->
+    <?php endif; ?>
+
     <?php while ($article = mysqli_fetch_array($articles)): ?>
         <div>
             <h2><?php echo $article['article_name']; ?></h2>
