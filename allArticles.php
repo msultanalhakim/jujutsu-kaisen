@@ -51,14 +51,15 @@
     <?php endif; ?>
 
     <?php while ($article = mysqli_fetch_array($articles)): ?>
-        <div>
-            <h2><?php echo $article['article_name']; ?></h2>
-            <p><?php echo $article['article_content']; ?></p>
-            <img src="<?php echo $article['article_image']; ?>" alt="Article Image" width="200px"><br>
-            <a href="updateArticle.php?id=<?php echo $article['id']; ?>">Update</a>
-            <a href="allArticles.php?id=<?php echo $article['id']; ?>">Delete</a>
-            <hr>
-        </div>
-    <?php endwhile; ?>
+    <div>
+        <h2><?php echo $article['article_name']; ?></h2>
+        <?php echo date('F j, Y', strtotime($article['article_release'])); ?>
+        <p><?php echo $article['article_content']; ?></p>
+        <img src="<?php echo $article['article_image']; ?>" alt="Article Image" width="200px"><br>
+        <a href="updateArticle.php?id=<?php echo $article['id']; ?>">Update</a>
+        <a href="allArticles.php?id=<?php echo $article['id']; ?>">Delete</a>
+        <hr>
+    </div>
+<?php endwhile; ?>
 </body>
 </html>
