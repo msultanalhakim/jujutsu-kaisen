@@ -49,11 +49,12 @@
     <?php if ($halamanAktif < $jumlahHalaman) : ?>
         <a href="?halaman=<?= $halamanAktif + 1 ?>">&raquo;</a> <!-- &raquo; right arrow -->
     <?php endif; ?>
+    <!-- End of Pagination -->
 
     <?php while ($article = mysqli_fetch_array($articles)): ?>
     <div>
         <h2><?php echo $article['article_name']; ?></h2>
-        <?php echo date('F j, Y', strtotime($article['article_release'])); ?>
+        <p><?php echo date('F j, Y', strtotime($article['article_release'])); ?></p>
         <p><?php echo $article['article_content']; ?></p>
         <img src="<?php echo $article['article_image']; ?>" alt="Article Image" width="200px"><br>
         <a href="updateArticle.php?id=<?php echo $article['id']; ?>">Update</a>
