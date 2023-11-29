@@ -25,7 +25,7 @@ if (isset($_POST['delete'])) {
         <div>
             <h2><?php echo $row['episode']; ?></h2>
             <video width="320" height="240" poster="<?php echo $row['thumbnail']; ?>">
-                <source src="videos/<?php echo $row['file']; ?>" type="video/mp4">
+                <source src="<?php echo $row['file']; ?>" type="video/mp4">
                 Your browser does not support the thumbnail tag.
             </video>
             <p><?php echo date('F j, Y', strtotime($row['file_uploaded'])); ?></p>

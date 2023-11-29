@@ -11,7 +11,7 @@ function getTopArticles() {
 //Semua articles
 function getAllArticles() {
     global $conn;
-    //Pagination
+    //--PAGENATION--//
     $jumlahDataPerHalaman = 5;
     $query = "SELECT COUNT(*) as total FROM article";
     $result = mysqli_query($conn, $query);

@@ -33,7 +33,6 @@
     </form>
     <br>
     <!-- Pagination -->
-    <h5></h5>
     <?php if ($halamanAktif > 1) : ?>
         <a href="?halaman=<?= $halamanAktif - 1 ?>">&laquo;</a> <!-- &laquo; left arrow -->
     <?php endif; ?>
