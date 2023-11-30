@@ -17,7 +17,17 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Hello, <a style="text-decoration: none;" href="editProfile.php"><?php echo $_SESSION['username']; ?></a> !</h1>
+    <div id="userProfile">
+        <?php
+        if (file_exists('uploads/' . $_SESSION['picture'])) {
+            echo '<img src="uploads/' . $_SESSION['picture'] . '" alt="Profile Picture" width="200px">';
+        } else {
+            echo '<img src="default.png" alt="Default Picture" width="200px">';
+        }
+        ?>
+        <h2><a style="text-decoration: none;" href="editProfile.php"><?php echo $_SESSION['username']; ?></a></h2>
+        <p><?php echo $_SESSION['email']; ?></p>
+    </div>
     <a href="logout.php">Logout</a>
     <br><br>
     <a href="addEps.php">Add Episode</a>
