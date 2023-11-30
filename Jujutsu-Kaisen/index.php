@@ -166,30 +166,7 @@
                                 <a href="article.php?id=<?php echo $article['id']; ?>">Read More</a>
                             </li>
                         </ul>
-                        <ul>
-                            <li>
-                                <img src="assets/images/articles/article-02.jpeg" class="article-image" alt="Article Image">
-                            </li>
-                            <li>
-                                <h3>Kematian Gojo Satoru, Begini Komentar Komikus!</h3>
-                                <span>Monday, 25/09/2023</span>
-                                <p>Manga Jujutsu Kaisen chapter 236 viral sepanjang akhir pekan ini. Sejak awal pekan lalu, ketika bocoran mengenai karakter Satoru Gojo tewas di tangan Sukuna beredar, netizen Jepang dan Indonesia berbondong-bondong mengungkapkan kekecewaannya. Satoru Gojo digambarkan sebagai penyihir terkuat yang ada di sekolah Jujutsu dan juga guru bagi Yuji Itadori. Keahlian dan kemampuannya diacungi jempol dan bisa membuat siapapun takut, namun tampaknya Gege Akutami ingin membuat cerita berbeda atau (mungkin saja) plot twist di bab berikutnya.
-                                </p>
-                                <a href="">View More</a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <img src="assets/images/articles/article-03.jpeg" class="article-image" alt="Article Image">
-                            </li>
-                            <li>
-                                <h3>Penjelasan Akhir Film Jujutsu Kaisen!</h3>
-                                <span>Saturday, 22/03/2022</span>
-                                <p>Film anime Jujutsu Kaisen bisa dikatakan memiliki akhir yang belum berakhir. Itu karena film tersebut merupakan kisah pembuka yang mengantar para penonton kepada serial Jujutsu Kaisen. Pada bagian akhir film Jujutsu Kaisen, Yuta Okkotsu berjanji pada Rika Orimoto bahwa ia akan mengorbankan nyawa agar bisa bersatu kembali dengannya. Yuta mengucap janji itu menjadi pemicu bagi Rika untuk mengeluarkan kekuatan kutukannya yang paling besar untuk mengalahkan lawannya, Geto Suguru. Di sisi lawan, Geto menggunakan teknik Gokunoban Uzumaki yang dapat mengeluarkan sekitar 4 ribu kutukan.
-                                </p>
-                                <a href="">View More</a>
-                            </li>
-                        </ul>
+                    <?php endwhile; ?>
                     </div>
                 </div>
             </div>
