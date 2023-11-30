@@ -1,6 +1,15 @@
 <?php
-session_start();
+    session_start();
+    include 'connection.php';
+    include 'functionArticles.php';
+
+    $articles = getTopArticles();
+
+    if (!isset($_SESSION['email'])) {
+        header('Location: login.php');
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -166,41 +175,19 @@ session_start();
                 <div class="article-items">
                     <h2>Article <span> Jujutsu Kaisen</span></h2>
                     <div class="article-list">
+                    <?php while ($article = mysqli_fetch_array($articles)): ?>
                         <ul>
                             <li>
-                                <img src="assets/images/articles/article-01.png" class="article-image" alt="Article Image">
+                                <img src="<?php echo $article['article_image']; ?>" alt="article-img">
                             </li>
                             <li>
-                                <h3>Yuji Itadori di Jujutsu Kaisen, Siapakah Dia?</h3>
-                                <span>Sunday, 24/09/2023</span>
-                                <p>Bisa dibilang, itulah satu-satunya wasiat dari sang kakek, sekaligus tujuan bagi Yuji Itadori. Di kehidupan SMA-nya yang baru saja dimulai, Itadori kehilangan kakeknya. Dia juga tidak tahu siapa orangtuanya dan sepertinya, dia memang tak peduli. Baginya, sang kakek adalah satu-satunya keluarganya. Di tengah kehilangannya, tiba-tiba muncul seseorang mengatakan bahwa dirinya telah membawa-bawa sebuah benda terkutuk! Orang yang kelihatannya seumuran dengannya itu mengaku bernama Megumi Fushiguro dari Akademi Jujutsu, sebuah nama sekolah yang tak lazim. </p>
-                                <a href="">View More</a>
+                                <h3><?php echo mb_strimwidth($article['article_name'], 0, 78, "..."); ?></h3>
+                                <span><?php echo date('F j, Y', strtotime($article['article_release'])); ?></span>
+                                <p><?php echo mb_strimwidth($article['article_content'], 0, 500, "..."); ?></p>
+                                <a href="article.php?id=<?php echo $article['id']; ?>">Read More</a>
                             </li>
                         </ul>
-                        <ul>
-                            <li>
-                                <img src="assets/images/articles/article-02.jpeg" class="article-image" alt="Article Image">
-                            </li>
-                            <li>
-                                <h3>Kematian Gojo Satoru, Begini Komentar Komikus!</h3>
-                                <span>Monday, 25/09/2023</span>
-                                <p>Manga Jujutsu Kaisen chapter 236 viral sepanjang akhir pekan ini. Sejak awal pekan lalu, ketika bocoran mengenai karakter Satoru Gojo tewas di tangan Sukuna beredar, netizen Jepang dan Indonesia berbondong-bondong mengungkapkan kekecewaannya. Satoru Gojo digambarkan sebagai penyihir terkuat yang ada di sekolah Jujutsu dan juga guru bagi Yuji Itadori. Keahlian dan kemampuannya diacungi jempol dan bisa membuat siapapun takut, namun tampaknya Gege Akutami ingin membuat cerita berbeda atau (mungkin saja) plot twist di bab berikutnya.
-                                </p>
-                                <a href="">View More</a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <img src="assets/images/articles/article-03.jpeg" class="article-image" alt="Article Image">
-                            </li>
-                            <li>
-                                <h3>Penjelasan Akhir Film Jujutsu Kaisen!</h3>
-                                <span>Saturday, 22/03/2022</span>
-                                <p>Film anime Jujutsu Kaisen bisa dikatakan memiliki akhir yang belum berakhir. Itu karena film tersebut merupakan kisah pembuka yang mengantar para penonton kepada serial Jujutsu Kaisen. Pada bagian akhir film Jujutsu Kaisen, Yuta Okkotsu berjanji pada Rika Orimoto bahwa ia akan mengorbankan nyawa agar bisa bersatu kembali dengannya. Yuta mengucap janji itu menjadi pemicu bagi Rika untuk mengeluarkan kekuatan kutukannya yang paling besar untuk mengalahkan lawannya, Geto Suguru. Di sisi lawan, Geto menggunakan teknik Gokunoban Uzumaki yang dapat mengeluarkan sekitar 4 ribu kutukan.
-                                </p>
-                                <a href="">View More</a>
-                            </li>
-                        </ul>
+                    <?php endwhile; ?>
                     </div>
                 </div>
             </div>

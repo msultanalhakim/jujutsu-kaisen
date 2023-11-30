@@ -12,7 +12,7 @@
         $password = $_POST['password'];
         $passwordError = false;
 
-        $sql = "SELECT * FROM tbl_user WHERE username='$username'";
+        $sql = "SELECT * FROM user WHERE username='$username'";
         $query = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($query) > 0) {

@@ -12,7 +12,7 @@
         $password = $_POST['password'];
         $passwordError = false;
 
-        $sql = "SELECT * FROM tbl_user WHERE username='$username'";
+        $sql = "SELECT * FROM user WHERE username='$username'";
         $query = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($query) > 0) {
@@ -34,6 +34,30 @@
             }else{
                 $passwordError = true;
             }
+        }
+    }
+
+    $username = $_SESSION['username'];
+
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $user = mysqli_fetch_array($result);
+
+    if (isset($_POST['change_password'])) {
+        $old_password = $_POST['old_password'];
+        $new_password = $_POST['new_password'];
+        $confirm_password = $_POST['confirm_password'];
+
+        if (password_verify($old_password, $user['password'])) {
+            if ($new_password == $confirm_password) {
+                $new_password = password_hash($new_password, PASSWORD_DEFAULT);
+                $query = "UPDATE user SET password = '$new_password' WHERE username = '$username'";
+                mysqli_query($conn, $query);
+                echo "<script>alert('Password has been changed!'); document.location = 'index.php';</script>";
+            } else {
+                echo "<script>alert('New password and confirm password do not match!');</script>";
+            }
+        } else {
+            echo "<script>alert('Current password is incorrect!');</script>";
         }
     }
 ?>
@@ -75,9 +99,9 @@
                             <label>Display Name</label>
                             <input type="text" name="fullname" placeholder="Display name" required>
                             <label>Email</label>
-                            <input type="text" name="email" value="msultanalhakim@gmail.com" disabled>
+                            <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>" disabled>
                             <label>Username</label>
-                            <input type="text" name="username" value="msultanalhakim" disabled>
+                            <input type="text" name="username" value="<?php echo $_SESSION['username']; ?>" disabled>
                             <input type="submit" name="update-profile" value="Modify">
                         </form>
                     </div>
@@ -86,14 +110,14 @@
                 <div class="account-right" id="change-password" style="display:none">
                     <h4>Change Password</h4>
                     <div class="account-content">
-                        <form name="account-password" action="<?php $_SERVER['PHP_SELF']; ?>">
+                        <form name="account-password" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
                             <label>Current Password</label>
-                            <input type="password" name="current_password" placeholder="Current password" required>
+                            <input type="password" name="old_password" placeholder="Current password" required>
                             <label>New Password</label>
-                            <input type="password" name="fullname" placeholder="New password" required>
+                            <input type="password" name="new_password" placeholder="New password" required>
                             <label>Confirm Password</label>
-                            <input type="password" name="fullname" placeholder="Confirm password" required>
-                            <input type="submit" name="update-password" value="Change">
+                            <input type="password" name="confirm_password" placeholder="Confirm password" required>
+                            <input type="submit" name="change_password" value="Change">
                         </form>
                     </div>
                     <a href='logout.php' class='btn-logout'><img src="assets/icon/power-off-solid.svg" class="img-logout" alt="Logout"></a>

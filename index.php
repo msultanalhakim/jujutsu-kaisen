@@ -19,7 +19,7 @@
 <body>
     <div id="userProfile">
         <?php
-        if (file_exists('uploads/' . $_SESSION['picture'])) {
+        if (isset($_SESSION['picture']) && file_exists('uploads/' . $_SESSION['picture'])) {
             echo '<img src="uploads/' . $_SESSION['picture'] . '" alt="Profile Picture" width="200px">';
         } else {
             echo '<img src="default.png" alt="Default Picture" width="200px">';

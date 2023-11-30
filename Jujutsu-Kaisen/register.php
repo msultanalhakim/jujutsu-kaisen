@@ -12,7 +12,7 @@
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
 
-        $sql = "SELECT * FROM tbl_user WHERE username = '$username'";
+        $sql = "SELECT * FROM user WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
         
         if (mysqli_num_rows($result) > 0) {
@@ -20,7 +20,7 @@
         } else {
             if ($password == $confirm_password) {
                 $password = password_hash($password, PASSWORD_DEFAULT);
-                $insert = "INSERT INTO tbl_user (username, email, password, level) VALUES ('$username', '$email', '$password', 'Member')";
+                $insert = "INSERT INTO user (username, email, password, level) VALUES ('$username', '$email', '$password', 'Member')";
                 $query = mysqli_query($conn, $insert);
                 if ($query) {
                     header('Location: login.php?message=registered');
@@ -40,7 +40,7 @@
     <head>
         <title>Jujutsu Kaisen - Shibuya Incident</title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="icon" href="assets/icon/jujutsu-kaisen-highschool.ico"/
+        <link rel="icon" href="assets/icon/jujutsu-kaisen-highschool.ico">
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
