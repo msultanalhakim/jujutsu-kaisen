@@ -30,7 +30,7 @@ if (isset($_POST['delete'])) {
             </video>
             <p><?php echo date('F j, Y', strtotime($row['file_uploaded'])); ?></p>
             <a href="watch.php?id=<?php echo $row['id_episode']; ?>">Watch Video</a>
-            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" onsubmit="return confirm('Are you sure you want to delete this episode?')">
                 <input type="hidden" name="id_episode" value="<?php echo $row['id_episode']; ?>">
                 <input type="submit" name="delete" value="Delete Episode">
             </form>

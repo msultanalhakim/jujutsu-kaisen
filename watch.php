@@ -44,6 +44,7 @@ $prev_id = mysqli_fetch_array($result)['id_episode'];
 $result = mysqli_query($conn, "SELECT id_episode FROM episode WHERE id_episode > $id ORDER BY id_episode ASC LIMIT 1");
 $next_id = mysqli_fetch_array($result)['id_episode'];
 
+//--PAGENATION KOMENTAR--//
 $jumlahDataPerHalaman = 5;
 $query = "SELECT COUNT(*) as total FROM comment WHERE id_episode = '$id'";
 $result = mysqli_query($conn, $query);
@@ -54,6 +55,7 @@ $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
 $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
 $query = "SELECT * FROM comment WHERE id_episode = '$id' ORDER BY id_comment DESC LIMIT $awalData, $jumlahDataPerHalaman";
 $comments = mysqli_query($conn, $query);
+//--END OF PAGENATION KOMENTAR--//
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +67,7 @@ $comments = mysqli_query($conn, $query);
 </head>
 <body>
     <video width="320" height="240" controls>
-        <source src="videos/<?php echo $video; ?>" type="video/mp4">
+        <source src="<?php echo $video; ?>" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 

@@ -58,7 +58,7 @@
         <img src="<?php echo $article['article_image']; ?>" alt="Article Image" width="200px"><br>
         <a href="article.php?id=<?php echo $article['id']; ?>">Read More</a><br><br>
         <a href="updateArticle.php?id=<?php echo $article['id']; ?>">Update</a>
-        <a href="allArticles.php?id=<?php echo $article['id']; ?>">Delete</a>
+        <a href="allArticles.php?id=<?php echo $article['id']; ?>" onclick="return confirm('Are you sure you want to delete this article?')">Delete</a>
     </div>
     <?php endwhile; ?>
 </body>
