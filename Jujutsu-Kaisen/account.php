@@ -75,16 +75,12 @@
             nav span{color: white;cursor: default;}
         </style>
     </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="index.php"><img src="assets/icon/arrow-left-solid.svg" class="arrow-account"></a><span>Homepage</span></li>
-            </ul>
-        </nav>    
+    <body> 
         <div class="account-container">
             <div class="account-section">
                 <div class="account-left">
-                    <img src="assets/images/logo.png" class="logo" alt="Logo">
+                    <h4>Jujutsu Kaisen</h4><hr>
+                    <input type="text">
                     <ul>
                         <li id="users" class="active"><a onclick="userProfiles();">User Profiles</a></li>
                         <li id="passwords"><a onclick="changePassword();">Change Password</a></li>
@@ -93,6 +89,14 @@
                     </ul>
                 </div>
                 <div class="account-right" id="user-profiles">
+                    <div class="navbar">
+                        <ul>
+                            <li><a href="">test</a></li>
+                            <li>test</li>
+                            <li>test</li>
+                            <li>test</li>
+                        </ul>
+                    </div>
                     <h4>User Profiles</h4>
                     <div class="account-content">
                         <form name="account-profiles" action="<?php $_SERVER['PHP_SELF']; ?>">

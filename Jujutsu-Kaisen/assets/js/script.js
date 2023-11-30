@@ -65,6 +65,42 @@ function insertEpisode(){
     document.getElementById("insert-episode").style.display = "inline-block";
 }
 
+function fullScreen(){
+    let watch = document.getElementById("watch-content");
+
+    if(watch.style.width === "75%"){
+        document.getElementById("watch-content").style.width = "100%";
+        document.getElementById("container-title").style.width = "70%";
+        document.getElementById("watch-sidebar").style.float = "right";
+        document.getElementById("watch-sidebar").style.marginTop = "-59vh";
+    }else if(watch.style.width = "100%"){
+        document.getElementById("watch-content").style.width = "75%";
+        document.getElementById("container-title").style.width = "100%";
+        document.getElementById("watch-sidebar").style.float = "none";
+        document.getElementById("watch-sidebar").style.marginTop = "0";
+    }
+}
+
+function screenBrightness(){
+    let nav = document.getElementById("navigation-bar");
+
+    if(nav.style.filter === "brightness(100%)"){
+        document.getElementById("navigation-bar").style.filter = "brightness(20%)";
+        document.getElementById("container-title").style.filter = "brightness(20%)";
+        document.getElementById("watch-sidebar").style.filter = "brightness(20%)";
+        document.getElementById("comment-section").style.filter = "brightness(20%)";
+        document.getElementById("footer").style.filter = "brightness(20%)";
+        document.getElementById("comment").readOnly = "true";
+    }else if(nav.style.filter = "brightness(20%)"){
+        document.getElementById("navigation-bar").style.filter = "brightness(100%)";
+        document.getElementById("container-title").style.filter = "brightness(100%)";
+        document.getElementById("watch-sidebar").style.filter = "brightness(100%)";
+        document.getElementById("comment-section").style.filter = "brightness(100%)";
+        document.getElementById("comment").readOnly = "false";
+    }
+}
+
+
 window.onclick = function(e) {
     if (!e.target.matches('.dropbtn')) {
         let myDropdown = document.getElementById("myDropdown");
