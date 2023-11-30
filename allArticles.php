@@ -56,10 +56,10 @@
         <p><?php echo date('F j, Y', strtotime($article['article_release'])); ?></p>
         <p><?php echo $article['article_content']; ?></p>
         <img src="<?php echo $article['article_image']; ?>" alt="Article Image" width="200px"><br>
+        <a href="article.php?id=<?php echo $article['id']; ?>">Read More</a><br><br>
         <a href="updateArticle.php?id=<?php echo $article['id']; ?>">Update</a>
         <a href="allArticles.php?id=<?php echo $article['id']; ?>">Delete</a>
-        <hr>
     </div>
-<?php endwhile; ?>
+    <?php endwhile; ?>
 </body>
 </html>

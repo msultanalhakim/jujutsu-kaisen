@@ -41,6 +41,8 @@
         <?php echo date('F j, Y', strtotime($article['article_release'])); ?>
         <p><?php echo $article['article_content']; ?></p>
         <img src="<?php echo $article['article_image']; ?>" alt="article-img" width="200px">
+        <br><br>
+        <a href="article.php?id=<?php echo $article['id']; ?>">Read More</a>
         <hr>
     <?php endwhile; ?>
     <br><br>
