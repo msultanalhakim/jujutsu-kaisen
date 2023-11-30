@@ -43,6 +43,17 @@ $result = mysqli_query($conn, "SELECT id_episode FROM episode WHERE id_episode <
 $prev_id = mysqli_fetch_array($result)['id_episode'];
 $result = mysqli_query($conn, "SELECT id_episode FROM episode WHERE id_episode > $id ORDER BY id_episode ASC LIMIT 1");
 $next_id = mysqli_fetch_array($result)['id_episode'];
+
+$jumlahDataPerHalaman = 5;
+$query = "SELECT COUNT(*) as total FROM comment WHERE id_episode = '$id'";
+$result = mysqli_query($conn, $query);
+$data = mysqli_fetch_assoc($result);
+$jumlahData = $data['total'];
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+$query = "SELECT * FROM comment WHERE id_episode = '$id' ORDER BY id_comment DESC LIMIT $awalData, $jumlahDataPerHalaman";
+$comments = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +79,7 @@ $next_id = mysqli_fetch_array($result)['id_episode'];
     </div>
 
     <?php
-    $result = mysqli_query($conn, "SELECT * FROM comment WHERE id_episode = '$id' ORDER BY id_comment DESC");
+    $result = mysqli_query($conn, "SELECT * FROM comment WHERE id_episode = '$id' ORDER BY id_comment DESC LIMIT $awalData, $jumlahDataPerHalaman");
     while ($row = mysqli_fetch_array($result)):
     ?>
         <div>
@@ -98,6 +109,25 @@ $next_id = mysqli_fetch_array($result)['id_episode'];
             <?php endif; ?>
         </div>
     <?php endwhile; ?>
+    <br>
+
+    <!-- Pagination -->
+    <?php if ($halamanAktif > 1) : ?>
+        <a href="?id=<?php echo $id; ?>&halaman=<?= $halamanAktif - 1 ?>">&laquo;</a> <!-- &laquo; left arrow -->
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+        <?php if ($i == $halamanAktif) : ?>
+            <a href="?id=<?php echo $id; ?>&halaman=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a>
+        <?php else : ?>
+            <a href="?id=<?php echo $id; ?>&halaman=<?= $i; ?>"><?= $i; ?></a>
+        <?php endif; ?>
+    <?php endfor; ?>
+
+    <?php if ($halamanAktif < $jumlahHalaman) : ?>
+        <a href="?id=<?php echo $id; ?>&halaman=<?= $halamanAktif + 1 ?>">&raquo;</a> <!-- &raquo; right arrow -->
+    <?php endif; ?>
+    <!-- End of Pagination -->
 
     <?php if (isset($_SESSION['username'])): ?>
         <!-- Form for submitting new comments -->
@@ -108,6 +138,7 @@ $next_id = mysqli_fetch_array($result)['id_episode'];
             <button type="submit" name="submit">Send</button>
         </form>
     <?php endif; ?>
+    <br>
     <a href="episode.php">Back</a>
 </body>
 </html>
