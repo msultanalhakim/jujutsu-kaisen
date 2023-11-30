@@ -34,19 +34,19 @@
     <br>
     <!-- Pagination -->
     <?php if ($halamanAktif > 1) : ?>
-        <a href="?halaman=<?= $halamanAktif - 1 ?>">&laquo;</a> <!-- &laquo; left arrow -->
+        <a href="?halaman=<?= $halamanAktif - 1 ?>">&lt;</a> <!-- &laquo; left arrow -->
     <?php endif; ?>
 
     <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
         <?php if ($i == $halamanAktif) : ?>
-            <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a>
+            <a href="?halaman=<?= $i; ?>" style="background-color:#fff !important;"><?= $i; ?></a>
         <?php else : ?>
             <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
         <?php endif; ?>
     <?php endfor; ?>
 
     <?php if ($halamanAktif < $jumlahHalaman) : ?>
-        <a href="?halaman=<?= $halamanAktif + 1 ?>">&raquo;</a> <!-- &raquo; right arrow -->
+        <a href="?halaman=<?= $halamanAktif + 1 ?>">&gt;</a> <!-- &raquo; right arrow -->
     <?php endif; ?>
     <!-- End of Pagination -->
 

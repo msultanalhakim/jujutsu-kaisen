@@ -1,7 +1,10 @@
 <?php
     include "connection.php";
+    include "functionArticles.php";
+
     session_start();
-    
+    list($articles, $jumlahHalaman, $halamanAktif) = getAllArticles();
+
 ?>
 
 <!DOCTYPE html>
@@ -22,16 +25,18 @@
             <div class="container-article">
                 <div class="sub-article">
                     <h2>Article Lists <span> Jujutsu Kaisen</span></h2>
+                    <?php while ($article = mysqli_fetch_array($articles)): ?>
                     <div class="article-item">
                         <ul>
                             <li><img src="assets/images/articles/article-01.png" alt=""></li>
                             <li class="right">
-                                <a href="" class="btn-news">News</a>
-                                <a href=""><h2>Yuji Itadori di Jujutsu Kaisen, Siapakah Dia?</h2></a>
-                                <span>September 24, 2023</span>
+                                <a href="article.php?id=<?php echo $article['id']; ?>" class="btn-news">News</a>
+                                <a href="article.php?id=<?php echo $article['id']; ?>"><h2><?php echo $article['article_name']; ?></h2></a>
+                                <span><?php echo date('F j, Y', strtotime($article['article_release'])); ?></span>
                             </li>
                         </ul>
                     </div>
+                    <?php endwhile; ?>
                     <div class="article-item">
                         <ul>
                             <li><img src="assets/images/articles/article-02.jpeg" alt=""></li>
@@ -53,11 +58,23 @@
                         </ul>
                     </div>
                     <div class="article-pagination">
-                        <a href="" class="btn-pagination">&lt;</a>
-                        <a href="" class="btn-pagination">2</a>
-                        <a href="" class="btn-pagination">3</a>
-                        <a href="" class="btn-pagination">4</a>
-                        <a href="" class="btn-pagination">&gt;</a>
+                        <!-- Pagination -->
+                        <?php if ($halamanAktif > 1) : ?>
+                            <a href="?halaman=<?= $halamanAktif - 1 ?>" class="btn-pagination">&lt;</a>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                            <?php if ($i == $halamanAktif) : ?>
+                                <a href="?halaman=<?= $i; ?>" class="btn-pagination" style="background:#760021;color:#767676"><?= $i; ?></a>
+                            <?php else : ?>
+                                <a href="?halaman=<?= $i; ?>" class="btn-pagination"><?= $i; ?></a>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+
+                        <?php if ($halamanAktif < $jumlahHalaman) : ?>
+                            <a href="?halaman=<?= $halamanAktif + 1 ?>" class="btn-pagination">&gt;</a>
+                        <?php endif; ?>
+                        <!-- End of Pagination -->
                     </div>
                 </div>
                 <!--

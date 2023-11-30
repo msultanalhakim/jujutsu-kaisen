@@ -191,14 +191,18 @@
                             <li><p>This film is very exciting and makes me want to keep watching it, so it makes me addicted because it's too exciting, I hope there will be more films like this in the future! </p></li>
                         </ul>
                     </div>
+                    <?php if (isset($_SESSION['username'])): ?>
+                    <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
                     <div class="input-comment">
                         <img src="assets/images/characters/suguru-geto.jpg">
                         <ul>
-                            <li><span>Comment as</span> Suguru Geto</li>
+                            <li><span>Comment as</span> <?php echo $_SESSION['username']; ?></li>
                             <li><textarea name="comment" id="comment" required></textarea></li>
-                            <li><a href="#" class="btn-comment">Comment</a></li>
+                            <li><input type="submit" name="submit" class="btn-comment">Comment</input></li>
                         </ul>
                     </div>
+                    </form>
+                    <?php endif; ?>
                 </div>
             </div><br>
             <div class="footer" id="footer">
