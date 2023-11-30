@@ -504,6 +504,27 @@ nav ul li ul li{
     width: 100%;
 }
 
+.article-items .article-btn{
+    padding: 0px 30px;
+    margin-top: -6px;
+}
+
+.article-items .article-btn a{
+    text-decoration: none;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background-color: #C70039;
+    vertical-align: bottom;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.article-items .article-btn a:hover{
+    background-color: #910029;
+    color: #b9b9b9;
+}
+
 .article-items h2{
     font-weight: 400;
     font-size: 32px;
@@ -1541,6 +1562,12 @@ nav ul li ul li{
     padding: 0px 6px;
 }
 
+<<<<<<< HEAD
+.season-section .sidebar-article a{
+    text-decoration: none;
+}
+=======
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
 .season-section .sidebar-article .sidebar-content{
     padding: 6px 6px;
 }
@@ -1617,10 +1644,20 @@ nav ul li ul li{
     margin: 0;
     padding: 0;
     background-color: transparent;
+<<<<<<< HEAD
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.list-season .list-section .btn-section:hover{
+    -webkit-transform: scale(1.15);
+	transform: scale(1.15);
+=======
 }
 
 .list-season .list-section .btn-section:hover{
     background-color: transparent;
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
 }
 
 .list-section .list-content{
@@ -1657,12 +1694,20 @@ nav ul li ul li{
 .article-page{
     width: 100%;
     min-height: 100vh;
+<<<<<<< HEAD
+    padding: 120px 150px;
+=======
     padding: 160px;
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
 }
 
 .article-page .container-article{
     margin: auto;
+<<<<<<< HEAD
+    width: 95%;
+=======
     width: 90%;
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
     height: 100%;
 }
 
@@ -1672,6 +1717,27 @@ nav ul li ul li{
     padding: 20px;
 }
 
+<<<<<<< HEAD
+.container-article .sub-article{
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+}
+
+.container-article .sub-article span{
+    margin: 14px;
+    color: #767676;
+    font-size: 13px;
+}
+
+.container-article .sub-article span a{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+}
+
+=======
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
 .container-article .sub-article .article-pagination{
     width: 100%;
     padding: 20px;
@@ -1696,6 +1762,13 @@ nav ul li ul li{
 }
 
 .container-article .sub-article h2{
+<<<<<<< HEAD
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    padding: 14px;
+    margin-bottom: -20px;
+=======
     font-weight: 400;
     font-size: 32px;
     color: white;
@@ -1710,6 +1783,7 @@ nav ul li ul li{
     color: #767676;
     vertical-align: middle;
     cursor: default;
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
 }
 
 .sub-article .article-item{
@@ -1765,11 +1839,19 @@ nav ul li ul li{
 .sub-article .article-item ul li h2{
     font-size: 22px;
     padding: 14px 0px 28px;
+<<<<<<< HEAD
+    font-weight: 400;
+=======
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
 }
 
 .sub-article .article-item ul li span{
     font-size: 12px;
     color: #767676;
+<<<<<<< HEAD
+    margin: 0;
+=======
+>>>>>>> 0976c0b27e3d498e8c64fd329357479f390bd411
 }
 
 
