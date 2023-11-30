@@ -34,6 +34,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    filter: brightness(100%);
 }
 
 nav .logo{
@@ -62,7 +63,7 @@ nav ul li ul li{
 }
 
 .nav-account{
-    padding: 6px 20px;
+    padding: 4px 20px;
     border-radius: 5px;
     background-color: #C70039;
     color: white;
@@ -110,7 +111,7 @@ nav ul li ul li{
     text-decoration: none;
     width: 90px;
     border-radius: 4px;
-    padding: 10px 10px;
+    padding: 8px 10px;
     color: #fff;
     font-size: 15px;
     -webkit-transition: 0.2s;
@@ -488,7 +489,7 @@ nav ul li ul li{
 /* Article Section */
 .article-section{
     width: 100%;
-    height: 160vh;
+    min-height: 100vh;
     background-color: rgba(13, 13, 13, 1);
 }
 
@@ -788,22 +789,15 @@ nav ul li ul li{
 
 /* Account Section */
 .account-container{
-    display: flex;
-    vertical-align: middle;
     max-width: 100%;
     width: 100%;
     height: 100vh;
-    margin: auto;
-    padding: 60px;
     background: rgba(13, 13, 13);
 }
 
 .account-section{
-    width: 80%;
-    height: 70vh;
-    background:url('../images/backgrounds/3.jpg')no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100vh;
     margin: auto;
     border-radius: 7px;
     display: inline-block;
@@ -811,16 +805,22 @@ nav ul li ul li{
 
 .account-left{
     height: 100%;
-    width: 24%;
-    background-color: #C70039;
-    border-radius: 7px;
+    width: 17%;
+    padding: 0px 8px;
+    background-color: rgba(48,48,48,1);
     display: inline-block;
+}
+
+.account-left hr{
+    margin: 8px 7px;
+    border: 0.4px solid #555555;
 }
 
 .account-left h4{
     font-weight: 600;
-    font-size: 18px;
-    text-align: left;
+    font-size: 34px;
+    font-family: 'Jujutsu Kaisen';
+    text-align: center;
     padding: 22px 20px 10px;
     color: white;
 }
@@ -834,15 +834,17 @@ nav ul li ul li{
 .account-left ul li{
     list-style: none;
     text-align: left;
-    background-color: #C70039;
+    background-color: rgba(48,48,48,1);
     width: 100%;
-    padding: 14px 20px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    border-radius: 4px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
 
 .account-left ul li:hover{
-    background-color: #a0002d;
+    background-color: rgb(37, 37, 37);
 }
 
 .account-left ul li a{
@@ -858,28 +860,52 @@ nav ul li ul li{
 }
 
 .account-left .active{
-    background-color: #a0002d;
+    background-color: rgba(37, 37, 37);
     font-weight: 600;
 }
 
+.account-user{
+    width: 100%;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    padding: 10px 4px 8px 14px;
+}
+
+.account-user .account-image{
+    width: 40px;
+    border-radius: 100%;
+    box-shadow: 2px 1px 6px rgba(13,13,13,0.5);
+    display: inline-block;
+}
+
+.account-left h6{
+    color: white;
+    margin: 12px;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+}
 .account-left .logo{
     width: 100%;
     padding: 22px 30px 14px;
 }
 
 .account-right{
-    width: 74%;
+    width: 82%;
     height: 100%;
     display: inline-block;
     vertical-align: top;
-    padding: 32px 20px;
+    margin: -4px -4px;
+    padding-right: 12px;
+    box-sizing:initial;
 }
 
 .account-right h4{
     font-weight: 800;
     font-size: 32px;
     text-align: left;
-    color: #C70039;
+    color: rgba(48,48,48,1);
     display: inline-block;
 }
 
@@ -975,6 +1001,15 @@ nav ul li ul li{
     background-color: #910029;
 }
 
+.account-right .navbar{
+    width: 100%;
+    background-color: red;
+}
+
+.account-right .navbar ul li{
+    display: inline-block;
+}
+
 .arrow-account{
     width: 20px;
     margin-left: -26px;
@@ -988,11 +1023,820 @@ nav ul li ul li{
     filter: invert(17%) sepia(0%) saturate(220%) hue-rotate(183deg) brightness(140%) contrast(40%);
 }
 
+/* Watch Section */
+.watch-section{
+    width: 100%;
+    height: 10vh;
+    padding: 120px 120px;
+}
 
+.watch-section .watch-content{
+    width: 75%;
+    display: inline-block;
+}
+
+.watch-section .watch-content video{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.watch-content .watch-tools{
+    padding: 10px 6px;
+}
+
+.watch-content .watch-tools a{
+    cursor: pointer;
+    padding: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.watch-content .watch-tools a img{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+.watch-content .watch-navigation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.watch-content .watch-navigation a{
+    padding: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.container-title{
+    width: 100%;
+    display: inline-block;
+    padding: 30px 20px;
+}
+
+.container-title img{
+    display: inline-block;
+    width: 28%;
+    border-radius: 4px;
+}
+
+.container-title .watch-title{
+    padding: 2px 10px;
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+}
+
+.container-title .watch-title ul li{
+    list-style: none;
+}
+
+.container-title .watch-title h4{
+    font-size: 18px;
+    font-weight: 600;
+    color:#fff;
+}
+
+.container-title .watch-title mark{
+    font-style: normal;
+    font-weight: 800;
+    color:rgb(199, 0, 56);
+    background-color: transparent;
+}
+
+.watch-title .watch-paragraph{
+    padding: 10px 0px;
+    font-size: 15px;
+    color: white;
+    text-align: justify;
+}
+
+.watch-title .watch-paragraph span{
+    display: block;
+    font-size: 16px;
+    color: #767676;
+}
+
+.watch-title .watch-footer{
+    color:white;
+    font-size:15px;
+}
+
+.watch-title .watch-mark{
+    color: #767676;
+}
+
+.watch-title .watch-download{
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(199, 0, 56) 13%, rgb(14, 14, 14) 100%);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.watch-title .sub-download{
+    box-sizing: border-box;
+    margin-top: 11px;
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #1d1d1d;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.watch-title .sub-download a{
+    text-decoration: none;
+    color:rgb(231, 231, 231);
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.watch-title .sub-download a:hover{
+    color: #767676;;
+}
+
+.watch-title .sub-download span{
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    padding: 2px 6px;
+    margin: 0px 6px;
+    border-radius: 2px;
+    background-color: #3a3a3a;
+}
+
+/* Watch Section Sidebar */
+.watch-sidebar{
+    width: 24%;
+    min-height: 40vh;
+    padding: 30px 10px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.watch-sidebar .sidebar-content{
+    width: 100%;
+    height: 100px;
+}
+
+.watch-sidebar .sidebar-content .item{
+    background-color: rgb(6, 6, 6, 0.8);
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    margin: 17px 0px;
+}
+
+.watch-sidebar .sidebar-content .item img{
+    width: 25%;
+    height: 100%;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.watch-sidebar .sidebar-content .item a{
+    text-decoration: none;
+    color: white;
+}
+
+.watch-sidebar .sidebar-content .item ul{
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 6px;
+    width: 70%;
+}
+
+.watch-sidebar .sidebar-content .item ul li{
+    list-style: none;
+    width: 100%;
+    padding: 2px 0px;
+}
+
+.watch-sidebar .sidebar-content .item ul li h6{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.watch-sidebar .sidebar-content .item ul li p{
+    color: color;
+    font-size: 11px;
+}
+
+.watch-sidebar .sidebar-content .item ul li span{
+    color: #767676;
+}
+
+.watch-sidebar .sidebar-content .btn-watch{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    background-color:#C70039;
+    padding: 4px 8px;
+    border-radius: 2px;
+    width: 100%;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.watch-sidebar .sidebar-content .btn-watch:hover{
+    color: #b9b9b9;
+    background-color: #910029;
+}
+
+/* Comment Section */
+.comment-section{
+    width: 75%;
+    min-height: 40vh;
+    padding: 0px 20px;
+}
+
+.comment-content{
+    width: 100%;
+    height: 100%;
+    margin:auto;
+    padding: 4px 14px;
+}
+
+.comment-content h2{
+    font-weight: 600;
+    font-size: 32px;
+    color: white;
+    vertical-align: middle;
+}
+
+.comment-content h2 img{
+    vertical-align: middle;
+}
+
+.comment-content p{
+    font-size: 16px;
+    color: white;
+    margin: 8px 0px;
+}
+
+.comment-items{
+    width: 100%;
+    min-height: 6vh;
+    margin: 20px 0px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #2c2c2c 13%, rgb(14, 14, 14) 100%);
+}
+
+.comment-items img{
+    display: inline-block;
+    width: 8%;
+    margin: 20px;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+
+.comment-items ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.comment-items ul li{
+    color: white;
+    list-style: none;
+}
+
+.comment-items ul li h4{
+    font-weight: 400;
+    font-size: 15px;
+    color: white;
+    list-style: none;
+}
+
+.comment-items ul li span{
+    font-weight: 400;
+    font-size: 10px;
+    color: #767676;
+    vertical-align: middle;
+}
+
+.comment-items ul li p{
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+    list-style: none;
+}
+
+.input-comment{
+    width: 100%;
+}
+
+.input-comment img{
+    display: inline-block;
+    width: 10%;
+    padding: 16px;
+    border-radius: 100%;
+    vertical-align: top;
+}
+
+.input-comment ul{
+    display: inline-block;
+    width: 85%;
+}
+
+.input-comment ul li{
+    list-style: none;
+    color: white;
+    font-size: 12px;
+}
+.input-comment ul li span{
+    color: #767676;
+}
+
+.input-comment textarea{
+    max-width: 100%;
+    width: 100%;
+    min-height: 6vh;
+    max-height: 30vh;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.input-comment .btn-comment{
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    background-color:#C70039;
+    margin: 6px 0px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.input-comment .btn-comment:hover{
+    color: #b9b9b9;
+    background-color: #910029;
+}
+
+/* Season Section */
+.season-section{
+    width: 100%;
+    height: 100vh;
+    padding: 130px 150px;
+}
+
+.season-section .season-content{
+    width: 75%;
+    display: inline-block;
+    padding: 8px;
+}
+
+.season-section .season-content h2{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.season-section .season-content span{
+    color: #767676;
+    font-size: 13px;
+}
+
+.season-section .season-content span a{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+}
+
+.season-content .season-title{
+    padding: 20px 0px;
+}
+
+.season-content .season-title img{
+    width: 25%;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.season-content .season-title ul{
+    vertical-align: top;
+    padding: 0px 18px;
+    width: 74%;
+    display: inline-block;
+}
+
+.season-content .season-title ul li{
+    list-style: none;
+    padding: 6px 0px;
+}
+
+.season-content .season-title ul li h2{
+    font-size: 18px;
+}
+
+.season-content .season-title ul li p{
+    font-size: 14px;
+    text-align: justify;
+    color: white;
+}
+
+.season-content .season-description{
+    padding: 10px 20px;
+    background-color: #1d1d1d;
+    border-radius: 4px;
+}
+
+.season-content .season-description tr td{
+    padding: 2px 6px;
+    color: white;
+    font-size: 14px;
+}
+
+.season-content .season-watch{
+    padding: 20px 0px;
+}
+
+.season-content .season-watch iframe{
+    width: 100%;
+    height: 539px;
+    border-radius: 4px;
+}
+
+.season-content .season-episode{
+    padding: 0px;
+}
+
+.season-content .season-episode h4{
+    color: white;
+    font-weight: 600;
+    padding:  14px 10px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.season-content .season-episode .list-episode{
+    width: 100%;
+    min-height: 60vh;
+    max-height: 60vh;
+    overflow-y: scroll;
+
+}
+.season-content .season-episode .list-episode ul{
+    display: block;
+}
+
+.season-content .season-episode .list-episode ul li{
+    list-style: none;
+    color:#c1c1c1;
+    padding: 8px 10px;
+    font-size: 14px;
+    justify-content: space-between;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.season-content .season-episode .list-episode ul li a{
+    text-decoration: none;
+    color: #c1c1c1;
+}
+.season-content .season-episode .list-episode ul li a.btn-episode{
+    float: right;
+    text-decoration: none;
+    font-size: 12px;
+    background-color: #767676;
+    padding: 2px 8px;
+    color: #3a3a3a;
+    border-radius: 2px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.season-content .season-episode .list-episode ul li a.btn-episode:hover{
+    color: #222222;
+    background-color: #4c4c4c;
+}
+
+/* Sidebar Article Season */
+.season-section .sidebar-article{
+    float: right;
+    width: 24%;
+    min-height: 100vh;
+    vertical-align: top;
+    padding: 36px 4px;
+}
+
+.season-section .sidebar-article h4{
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0px 6px;
+}
+
+.season-section .sidebar-article .sidebar-content{
+    padding: 6px 6px;
+}
+
+.season-section .sidebar-article .sidebar-content .sidebar-item{
+    padding: 8px 8px;
+    margin: 6px 0px 10px;
+    border-radius: 4px;
+    background-color: #121212;
+}
+
+.season-section .sidebar-article .sidebar-content .sidebar-item a{
+    text-decoration: none;
+}
+
+.season-section .sidebar-article .sidebar-content .sidebar-item ul li{
+    list-style-type: none;
+}
+
+.season-section .sidebar-article .sidebar-content .sidebar-item ul li img{
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+}
+
+.season-section .sidebar-article .sidebar-content .sidebar-item ul li p{
+    color: white;
+    font-size: 14px;
+    display: block;
+}
+
+.season-section .sidebar-article .sidebar-content .sidebar-item span{
+    color: #767676;
+    display: block;
+    font-size: 10px;
+}
+
+.season-section .sidebar-article .sidebar-content .btn-article{
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    background-color:#C70039;
+    padding: 4px 8px;
+    border-radius: 2px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.sidebar-article .sidebar-content .btn-article:hover{
+    color: #b9b9b9;
+    background-color: #910029;
+}
+
+/* List Season */
+.list-season{
+    height: 100vh;
+    display: flex;
+    padding: 30px;
+    align-items: center ;
+    justify-content: center;
+}
+
+.list-season .list-section{
+    margin-top: -50px;
+    height: 50%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-season .list-section .btn-section{
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.list-season .list-section .btn-section:hover{
+    background-color: transparent;
+}
+
+.list-section .list-content{
+    text-align: center;
+    height: 350px;
+    width: 100%;
+}
+
+.list-section a{
+    text-decoration: none;
+}
+
+.list-section .list-content img{
+    border-radius: 4px;
+    height: 100%;
+    width: 226px;
+}
+
+
+.list-section .list-content h2{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: -6px;
+}
+
+.list-section .list-content span{
+    color: #767676;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Article Page */
+.article-page{
+    width: 100%;
+    min-height: 100vh;
+    padding: 160px;
+}
+
+.article-page .container-article{
+    margin: auto;
+    width: 90%;
+    height: 100%;
+}
+
+.container-article .sub-article{
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+}
+
+.container-article .sub-article .article-pagination{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-article .sub-article .article-pagination a.btn-pagination{
+    text-decoration: none;
+    color: white;
+    background-color: #C70039;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin: 2px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.container-article .sub-article .article-pagination a.btn-pagination:hover{
+    color: #b9b9b9;
+    background-color: #910029;
+}
+
+.container-article .sub-article h2{
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+    padding: 14px;
+    margin-bottom: -28px;
+}
+
+.container-article .sub-article h2 span{
+    border-left: 2px solid #fff;
+    padding: 4px 14px;
+    font-size: 18px;
+    color: #767676;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.sub-article .article-item{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 4px 0px;
+}
+
+.sub-article .article-item ul{
+    width: 100%;
+    padding: 16px;
+    display: block;
+    border-bottom: 1px solid #767676;
+}
+
+.sub-article .article-item ul li{
+    display: inline-block;
+    list-style: none;
+    vertical-align: top;
+    width: 30%;
+    height: 25vh;
+    padding: 6px;
+}
+
+.sub-article .article-item ul li.right{
+    width: 69%;
+    height: 100%;
+    padding: 20px 6px;
+}
+
+.sub-article .article-item ul li a.btn-news{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 2px 6px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+
+.sub-article .article-item ul li img{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.sub-article .article-item ul li a{
+    text-decoration: none;
+}
+
+.sub-article .article-item ul li h2{
+    font-size: 22px;
+    padding: 14px 0px 28px;
+}
+
+.sub-article .article-item ul li span{
+    font-size: 12px;
+    color: #767676;
+}
+
+
+/* Sidebar Article 
+.container-article .sidebar-article{
+    vertical-align: top;
+    width: 25%;
+    float: right;
+    padding: 10px;
+}
+
+.container-article .sidebar-article .sidebar-content{
+    padding: 2px;
+}
+
+.container-article .sidebar-article .sidebar-content h2{
+    color: white;
+    padding: 30px 12px 0px;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: -4px;
+}
+
+.container-article .sidebar-article .sidebar-content .sidebar-item a{
+    text-decoration: none;
+}
+
+.container-article .sidebar-article .sidebar-content .sidebar-item ul{
+    display: block;
+    padding: 10px;
+    margin: 20px 4px;
+    border-radius: 4px;
+}
+
+.container-article .sidebar-article .sidebar-content .sidebar-item ul li{
+    list-style: none;
+    display: block;
+}
+
+.container-article .sidebar-article .sidebar-content .sidebar-item ul li{
+    list-style: none;
+    display: block;
+}
+
+.container-article .sidebar-article .sidebar-content .sidebar-item ul li h4{
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    margin-bottom: -6px;
+}
+
+.container-article .sidebar-article .sidebar-content .sidebar-item ul li span{
+    font-weight: 400;
+    font-size: 10px;
+    color: #767676;
+}
+
+.container-article .sidebar-article .sidebar-content .sidebar-item img{
+    width: 100%;
+    border-radius: 4px;
+}
+*/
 /* Footer Section */
 .footer {
     width: 100%;
-    height: 10vh;
+    min-height: 10vh;
+    vertical-align: bottom;
     background-color: rgba(13, 13, 13);
     color: white;
     display: flex;

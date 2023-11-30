@@ -40,7 +40,7 @@
     <head>
         <title>Jujutsu Kaisen - Shibuya Incident</title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="icon" href="assets/icon/jujutsu-kaisen-highschool.ico"/
+        <link rel="icon" href="assets/icon/jujutsu-kaisen-highschool.ico"/>
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +50,7 @@
     </head>
     <body>
         <div class="register-container">
-            <h1><a href="javascript:history.back()"><img src="assets/icon/arrow-left-solid.svg" class="arrow-register"></a> Register Account</h1>
+            <h1><a href="login.php"><img src="assets/icon/arrow-left-solid.svg" class="arrow-register"></a> Register Account</h1>
             <div class="account-content">
              <?php
              if($_GET['message'] == "failure"){
